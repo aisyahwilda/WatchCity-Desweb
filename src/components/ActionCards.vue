@@ -28,7 +28,6 @@
         </div>
       </div>
 
-      <!-- CARD 2 - EVENT MENDATANG -->
       <div class="rounded-2xl shadow-xl overflow-hidden bg-white">
         <div
           class="h-28 bg-gradient-to-b from-[#90C67C] to-[#67AE6E] flex items-center justify-center"

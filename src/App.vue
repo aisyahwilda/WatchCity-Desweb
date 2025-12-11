@@ -1,18 +1,24 @@
 <script setup>
-import Navbar from "./components/Navbar.vue";
-import Footer from "./components/Footer.vue";
+import Navbar from './components/Navbar.vue'
+import Footer from './components/Footer.vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
 </script>
 
 <template>
-  <div class="min-h-screen flex flex-col">
-
+  <div
+    :class="[
+      'min-h-screen flex flex-col',
+      route.path === '/' ? '' : 'pt-[72px] md:pt-[88px]'
+    ]"
+  >
     <Navbar />
 
-    <main class="flex-1">
+    <div class="flex-1">
       <RouterView />
-    </main>
+    </div>
 
     <Footer />
-
   </div>
 </template>

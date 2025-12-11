@@ -1,20 +1,18 @@
 <script setup>
-import Navbar from '../components/Navbar.vue'
-import HeroHome from '../components/Hero.vue'
-import StatsSection from '@/components/StatsSection.vue'
-import ActionCards from '@/components/ActionCards.vue'
-import Footer from '../components/Footer.vue'
+import Hero from '../components/Hero.vue'
+import Static from '@/components/Static.vue'
+import FeatursCard from '@/components/FeatursCard.vue'
+import Overview from '../components/Overview.vue'
+import CityInfo from '@/components/CityInfo.vue'
 </script>
 
 <template>
-  <div class="absolute top-0 left-0 w-full z-50">  
   <Navbar />
-  </div>
-
-  <HeroHome />
-  <StatsSection />
-  <ActionCards />
-  <Footer />
+  <Hero />
+  <Static />
+  <FeatursCard />
+  <Overview />
+  <CityInfo />
 </template>
 
 <style scoped>

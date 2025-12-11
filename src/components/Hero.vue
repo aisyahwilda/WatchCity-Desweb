@@ -1,32 +1,33 @@
+<script setup>
+import { RouterLink } from 'vue-router'
+</script>
+
 <template>
-  <section class="relative w-full h-[75vh] bg-cover bg-center" 
-  style="background-image: url('/Hero.jpeg');">
+  <section
+    class="relative w-full h-screen bg-cover bg-center flex items-center justify-center"
+    style="background-image: url('/Hero.jpeg')"
+  >
+    <div class="absolute inset-0 bg-black/50"></div>
 
-    <Navbar /> 
-
-    <div class="absolute inset-0 bg-black/30"></div>
-
-    <div class="relative z-20 h-full flex flex-col items-center justify-start text-center h-full pt-32 md:pt-36 px-6">
-      <h1 class="text-white font-extrabold text-5xl md:text-7xl leading-tight drop-shadow-2xl tracking-wide">
+    <div class="relative z-20 text-center px-4 md:px-6 lg:px-8">
+      <h1
+        class="text-white font-black text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl leading-tight uppercase drop-shadow-2xl"
+      >
         YOUR CITY,<br />
         SMARTER WITH<br />
         YOU
       </h1>
 
-      <div class="mt-6">
-        <router-link
-          to="/report"
-          class="mt-6 px-7 py-3 rounded-full font-bold text-[#1C523E] bg-[linear-gradient(to_bottom,#67AE6E,#B4E7A0,rgba(255,255,255,0.95))]
-                  transition-all duration-300 hover:scale-110"
-          >
-            Laporkan Sekarang
-          </router-link>
-
-      </div>
+      <RouterLink
+        to="/report"
+        class="inline-block mt-6 md:mt-8 px-6 md:px-8 lg:px-10 py-3 md:py-4 text-base sm:text-lg md:text-xl lg:text-2xl font-bold rounded-full shadow-lg hover:opacity-90 transition-all"
+        style="
+          background: linear-gradient(180deg, #67ae6e 0%, #90c67c 50%, #e1eebc 100%);
+          color: #18523e;
+        "
+      >
+        Report Now
+      </RouterLink>
     </div>
   </section>
 </template>
-
-<script setup>
-</script>
-

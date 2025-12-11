@@ -1,0 +1,92 @@
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const laporan = ref(0)
+const events = ref(0)
+const diperbaiki = ref(0)
+
+function animate(refVar, target, duration = 1200) {
+  let startTime = null
+
+  function step(timestamp) {
+    if (!startTime) startTime = timestamp
+    const progress = timestamp - startTime
+    const percent = Math.min(progress / duration, 1)
+
+    refVar.value = Math.floor(percent * target)
+
+    if (percent < 1) requestAnimationFrame(step)
+  }
+  requestAnimationFrame(step)
+}
+
+onMounted(() => {
+  const el = document.querySelector('#stats-section')
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      if (entries[0].isIntersecting) {
+        animate(laporan, 100)
+        animate(events, 50)
+        animate(diperbaiki, 25)
+        observer.disconnect()
+      }
+    },
+    { threshold: 0.4 },
+  )
+
+  observer.observe(el)
+})
+</script>
+
+<template>
+  <section id="stats-section" class="w-full py-12 sm:py-14 md:py-16 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
+      <div
+        class="flex items-center gap-3 sm:gap-4 md:gap-5 bg-[#328E6E] text-white px-4 sm:px-5 md:px-6 py-4 sm:py-5 rounded-2xl sm:rounded-3xl shadow-xl"
+      >
+        <img
+          src="/laporan.png"
+          class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 object-contain flex-shrink-0"
+          alt="laporan icon"
+        />
+
+        <div class="flex-1 min-w-0 leading-tight">
+          <p class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-none truncate">{{ laporan }}</p>
+          <p class="text-xs sm:text-sm md:text-base">Laporan</p>
+        </div>
+      </div>
+
+      <div
+        class="flex items-center gap-3 sm:gap-4 md:gap-5 bg-[#67AE6E] text-white px-4 sm:px-5 md:px-6 py-4 sm:py-5 sm:rounded-3xl shadow-xl"
+      >
+        <img
+          src="/event.png"
+          class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 object-contain flex-shrink-0"
+          alt="event icon"
+        />
+
+        <div class="flex-1 min-w-0 leading-tight">
+          <p class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-none truncate">{{ events }}</p>
+          <p class="text-xs sm:text-sm md:text-base truncate">Events</p>
+        </div>
+      </div>
+
+      <div
+        class="flex items-center gap-3 sm:gap-4 md:gap-5 bg-[#90C67C] text-white px-4 sm:px-5 md:px-6 py-4 sm:py-5 rounded-2xl sm:rounded-3xl shadow-xl"
+      >
+        <img
+          src="/diperbaiki.png"
+          class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 object-contain flex-shrink-0"
+          alt="diperbaiki icon"
+        />
+
+        <div class="flex-1 min-w-0 leading-tight">
+          <p class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-none truncate">{{ diperbaiki }}</p>
+          <p class="text-xs sm:text-sm md:text-base truncate">Fasilitas Diperbaiki</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+ 

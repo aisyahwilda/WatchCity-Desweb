@@ -1,15 +1,11 @@
 <script setup>
-import Overview from '../components/Overview.vue'
-import Navbar from '../components/Navbar.vue'
-import Footer from '../components/Footer.vue'
+import DesCity from '@/components/DesCity.vue'
+import visimisi from '@/components/visimisi.vue'
+import CaraKerja from '@/components/CaraKerja.vue'
 </script>
 
 <template>
-  <div class="pt-28">
-    <Overview />
-    <Navbar />
-    <Footer />
-  </div>
+  <DesCity />
+  <visimisi />
+  <CaraKerja />
 </template>
-
-<style scoped></style>
