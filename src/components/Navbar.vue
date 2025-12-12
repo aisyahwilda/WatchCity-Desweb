@@ -97,6 +97,7 @@ const isActive = (path) => route.path === path
           { name: 'About', path: '/about' },
           { name: 'Report', path: '/report' },
           { name: 'Events', path: '/events' },
+          { name: 'About Me', path: '/aboutme' },
           { name: 'Contact Us', path: '/contact' }
         ]"
         :key="item.path"
