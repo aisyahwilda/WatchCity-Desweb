@@ -36,3 +36,9 @@ npm run dev
 ```sh
 npm run build
 ```
+menambahkan pages AboutMe yang diimport di index.js route nya. halaman ini bisa di buka melalui http://localhost:5174/aboutme
+
+file yang terlibat yaitu
+components/profil.vue
+components/Skill.vue
+views/AboutMePage.vue

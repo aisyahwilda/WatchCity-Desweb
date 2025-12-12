@@ -4,6 +4,7 @@ import HomePage from '../views/HomePage.vue'
 import AboutPage from '../views/AboutPage.vue'
 import ReportPage from '../views/ReportPage.vue'
 import EventsPage from '../views/EventsPage.vue'
+import AboutMePage from '../views/AboutMePage.vue'
 import ContactPage from '../views/ContactPage.vue'
 
 const router = createRouter({
@@ -32,6 +33,11 @@ const router = createRouter({
       path: '/events',
       name: 'events',
       component: EventsPage,
+    },
+    {
+      path: '/aboutme',
+      name: 'aboutme',
+      component: AboutMePage,
     },
     {
       path: '/contact',

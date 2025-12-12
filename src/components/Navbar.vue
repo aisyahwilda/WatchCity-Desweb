@@ -32,7 +32,8 @@ const isActive = (path) => route.path === path
           { name: 'Home', path: '/' },
           { name: 'About', path: '/about' },
           { name: 'Report', path: '/report' },
-          { name: 'Events', path: '/events' }
+          { name: 'Events', path: '/events' },
+          { name: 'About Me', path: '/aboutme' }
         ]"
         :key="item.path"
         :to="item.path"
